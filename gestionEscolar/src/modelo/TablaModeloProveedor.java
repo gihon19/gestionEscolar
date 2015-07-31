@@ -60,7 +60,7 @@ public class TablaModeloProveedor extends AbstractTableModel {
 	public Object getValueAt(int rowIndex, int columnIndex) {
 		switch (columnIndex) {
         case 0:
-            return proveedores.get(rowIndex).getId();
+            return proveedores.get(rowIndex).();
         case 1:
             return proveedores.get(rowIndex).getNombre();
         case 2:
