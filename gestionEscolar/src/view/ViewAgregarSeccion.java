@@ -80,6 +80,5 @@ public class ViewAgregarSeccion extends JFrame{
 		getContentPane().add(btnGuardar);
 		
 		
-		
 	}
 }
