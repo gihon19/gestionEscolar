@@ -1,9 +1,11 @@
-package view;
+package modelo;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.table.AbstractTableModel;
+
+import view.ViewProfesores;
 
 
 public class MtProfesor extends AbstractTableModel {
@@ -20,7 +22,7 @@ public class MtProfesor extends AbstractTableModel {
 	@Override
 	public int getColumnCount() {
 		// TODO Auto-generated method stub
-		return 6;
+		return TituloTabla.length;//ssfdsfsdfsd
 	}
 	
 	@Override
