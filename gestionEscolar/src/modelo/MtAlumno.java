@@ -20,7 +20,7 @@ public class MtAlumno extends AbstractTableModel {
 	@Override
 	public int getColumnCount() {
 		// TODO Auto-generated method stub
-		return 6;
+		return TitulosTabla.length;
 	}
 
 	@Override
