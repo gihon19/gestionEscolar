@@ -22,7 +22,7 @@ public class MtProfesor extends AbstractTableModel {
 	@Override
 	public int getColumnCount() {
 		// TODO Auto-generated method stub
-		return 6;
+		return TituloTabla.length;
 	}
 	
 	@Override
