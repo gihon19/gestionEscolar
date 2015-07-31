@@ -1,19 +1,19 @@
 package modelo;
 
 public class Modalidad {
-  private int codigo_modalidad;
+  private int codigoModalidad;
   private String nombre;
   
   
    Modalidad(){
    }
    
-	public void setCodigo_Modalidad(int C){
-		codigo_modalidad=C;
+	public void setCodigoModalidad(int c){
+		codigoModalidad=c;
 	}
 	
-	public int getCodigo_Modalidad(){
-		return codigo_modalidad;
+	public int getCodigoModalidad(){
+		return codigoModalidad;
 	}
 	
 	public void setNombre(String N){
@@ -25,7 +25,7 @@ public class Modalidad {
 	}
 	
 	public String toString(){
-		return "Codigo de Modalidad: "+codigo_modalidad+", nombre: "+nombre;
+		return "Codigo de Modalidad: "+codigoModalidad+", nombre: "+nombre;
 		
 	}
 }
