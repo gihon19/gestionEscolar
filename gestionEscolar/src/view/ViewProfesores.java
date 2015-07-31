@@ -6,6 +6,8 @@ import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
+import modelo.MtProfesor;
+
 public class ViewProfesores extends JFrame {
 	private JTable mytabla;
 	private JScrollPane scrollPane;
