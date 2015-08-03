@@ -22,6 +22,7 @@ public class ViewEncargados extends JFrame {
 		mytabla.setModel(mymodelo);
 		mytabla.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		
+		//ngdxhtrgfdyhtrdxsyhtrsdyrsxytrxu
 		
 		mymodelo=new MtEncargado();
 		mytabla=new JTable();
