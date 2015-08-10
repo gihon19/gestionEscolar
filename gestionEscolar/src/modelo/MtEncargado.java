@@ -9,6 +9,7 @@ import view.ViewEncargados;
 
 public class MtEncargado extends AbstractTableModel {
 	
+	/*esto sirve para poner los titulos de la tabla*/
 	private String []TituloTabla={"Codigo","Nombre","Apellido", "Telefono", "Direccion"};
 	private List<ViewEncargados> Encargados= new ArrayList<ViewEncargados>();
 

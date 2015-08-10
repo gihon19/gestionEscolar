@@ -11,6 +11,10 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 //Importaciones de otras clases
 
+import controlador.CtrlAgregarModalidad;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
 public class ViewAgregarModalidad extends JDialog {
 	//Variables.
 	private JTextField textField;
@@ -19,36 +23,57 @@ public class ViewAgregarModalidad extends JDialog {
 	private JButton  btnGuardar;  
 	
 	//Constructor
-	public ViewAgregarModalidad(Window v) {
-		//espara agregar un tema Arriba, en la ventana.
-		super(v,"Agregar Modalidad",Dialog.ModalityType.DOCUMENT_MODAL);
+	public ViewAgregarModalidad() {
+		setTitle("Agregar Modalidad");
+		//es para agregar un tema Arriba, en la ventana.
+		
 		
 		getContentPane().setLayout (null);
-		//Metodos.
+		
+		//Metodos.		
 		textField = new JTextField();
-		textField.setBounds(33, 55, 127, 20);
+		textField.setBounds(102, 58, 232, 20);
 		getContentPane().add(textField);
 		textField.setColumns(10);
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(33, 141, 232, 20);
+		textField_1.setBounds(102, 144, 232, 20);
 		getContentPane().add(textField_1);
 		textField_1.setColumns(10);
 		
 		btnGuardar = new JButton("Guardar");
-		btnGuardar.setBounds(33, 200, 104, 32);
+		btnGuardar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnGuardar.setBounds(77, 200, 93, 32);
 		getContentPane().add(btnGuardar);
 		
 		JLabel lblIdModalidad = new JLabel("Id Modalidad");
-		lblIdModalidad.setBounds(33, 32, 65, 20);
+		lblIdModalidad.setBounds(175, 27, 93, 20);
 		getContentPane().add(lblIdModalidad);
 		
 		JLabel lblNombre = new JLabel("Nombre");
-		lblNombre.setBounds(33, 119, 46, 20);
+		lblNombre.setBounds(193, 112, 46, 20);
 		getContentPane().add(lblNombre);
 		
 		btnCancelar = new JButton("Cancelar");
-		btnCancelar.setBounds(159, 201, 93, 30);
-		getContentPane().add(btnCancelar);
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnCancelar.setBounds(241, 201, 93, 30);
+		getContentPane().add(btnCancelar);	
+
 	}
+	
+	public void conectarCtrl(CtrlAgregarModalidad c)
+	{
+		
+		btnGuardar.addActionListener(c);
+		btnGuardar.setActionCommand("GUARDAR");
+		btnCancelar.addActionListener(c);
+		btnCancelar.setActionCommand("CANCELAR");
+	}
+	
 }
