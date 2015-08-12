@@ -20,7 +20,7 @@ public class EncargadoDao {
 	
 	
 	/*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Metodo para agregar>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-	public boolean registrarArticulo(EncargadosPadres myEncargado)
+	public boolean registrar(EncargadosPadres myEncargado)
 	{
 		
 		int resultado=0;

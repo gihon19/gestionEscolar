@@ -87,7 +87,7 @@ public class ModalidadDao {
 	
 	
 	/*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Metodo para agregar>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-	public boolean registrarArticulo(Modalidad myModalidad)
+	public boolean registrar(Modalidad myModalidad)
 	{
 		
 		int resultado=0;
