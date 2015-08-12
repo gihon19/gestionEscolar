@@ -18,7 +18,7 @@ public class AsignaturaDao {
 	}
 	
 	/*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Metodo para agregar>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-	public boolean registrarArticulo(Asignatura myAsignatura)
+	public boolean registrar(Asignatura myAsignatura)
 	{
 		
 		int resultado=0;

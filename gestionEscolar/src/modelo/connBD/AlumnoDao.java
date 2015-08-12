@@ -18,7 +18,7 @@ public class AlumnoDao {
 	}
 	
 	/*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Metodo para agregar>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-	public boolean registrarArticulo(Alumno myAlumno)
+	public boolean registrar(Alumno myAlumno)
 	{
 		
 		int resultado=0;
