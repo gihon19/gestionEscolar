@@ -4,10 +4,11 @@ public class Docente {
 	private String rnp;
 	private String nombre;
 	private String apellido;
-	private int telefono;
+	private String telefono;
 	private String correo ;
 	private String direccion;
 	private String pasword;
+	
 	
 	Docente(){
 	}
@@ -35,11 +36,11 @@ public class Docente {
 	public String getApellido(){
 		return apellido;
 	}
-	public void setTelefono(int tel){
+	public void setTelefono(String tel){
 		telefono=tel;
 	}
 	
-	public int getTelefono(){
+	public String getTelefono(){
 		return telefono;
 	}
 	public void setCorreo(String co){
@@ -71,5 +72,7 @@ direccion=di;
 	public String toString(){
 		return  "RNp:"+rnp+", Nombre:"+nombre+" , Apellido: "+apellido+",Telefono:"+telefono+", Correo:"+correo+", Direccion:"+direccion+", Contraseña:"+pasword;
 		}
+
+	
 
 }

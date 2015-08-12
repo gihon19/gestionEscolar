@@ -9,6 +9,7 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import modelo.Alumno;
 import modelo.ConexionBD;
 import modelo.Modalidad;
 
@@ -17,7 +18,7 @@ import modelo.Modalidad;
 
 public class ModalidadDao {
 	private ConexionBD conexion=null;
-	private PreparedStatement insertarNuevaArticulo=null;
+	private PreparedStatement insertarNuevo=null;
 	private PreparedStatement seleccionarTodas=null;
 	
 	public ModalidadDao(ConexionBD conn){
@@ -82,6 +83,51 @@ public class ModalidadDao {
 			}
 			else return null;
 		
+	}
+	
+	
+	/*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Metodo para agregar>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+	public boolean registrarArticulo(Modalidad myModalidad)
+	{
+		
+		int resultado=0;
+		ResultSet rs=null;
+		Connection con = null;
+		
+		try 
+		{
+			con = conexion.getPoolConexion().getConnection();
+			
+			insertarNuevo=con.prepareStatement( "INSERT INTO modalidad(nombre) VALUES (?)");
+			
+			insertarNuevo.setString( 1, myModalidad.getNombre() );
+			
+			
+			
+			resultado=insertarNuevo.executeUpdate();
+			
+						
+			
+			return true;
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			//conexion.desconectar();
+            return false;
+		}
+		finally
+		{
+			try{
+				if(rs!=null)rs.close();
+				 if(insertarNuevo != null)insertarNuevo.close();
+	              if(con != null) con.close();
+			} // fin de try
+			catch ( SQLException excepcionSql )
+			{
+				excepcionSql.printStackTrace();
+				//conexion.desconectar();
+			} // fin de catch
+		} // fin de finally
 	}
 	
 	
