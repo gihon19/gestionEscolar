@@ -7,7 +7,7 @@ public class EncargadosPadres {
 	private String nombre;
 	private String apellido;
 	private String direccion;
-	private int telefono;
+	private String  telefono;
 	
 	EncargadosPadres(){
 		
@@ -45,11 +45,11 @@ public class EncargadosPadres {
 		return direccion;
 	}
 	
-	public void setTelefono(int T){
+	public void setTelefono(String T){
 		telefono=T;
 	}
 	
-	public int getTelefono(){
+	public String getTelefono(){
 		return telefono;
 	}
 	

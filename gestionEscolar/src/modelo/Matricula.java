@@ -3,7 +3,7 @@ package modelo;
 public class Matricula {
 	
 	private Seccion Seccion;
-	private Alumnos Alumno;
+	private Alumno Alumno;
 	private String Anio;
 
 	public Matricula(){
@@ -17,10 +17,10 @@ public class Matricula {
 		return Seccion;
 	}
 	
-	public void setAlumno(Alumnos alum){
+	public void setAlumno(Alumno alum){
 		Alumno=alum;
 	}
-	public Alumnos getAlumno (){
+	public Alumno getAlumno (){
 		return Alumno;
 	}
 	

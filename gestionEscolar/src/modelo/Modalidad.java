@@ -5,7 +5,7 @@ public class Modalidad {
   private String nombre;
   
   
-   Modalidad(){
+   public Modalidad(){
    }
    
 	public void setCodigoModalidad(int c){

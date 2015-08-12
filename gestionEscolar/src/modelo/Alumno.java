@@ -1,20 +1,31 @@
 package modelo;
 
-public class Alumnos {
+public class Alumno {
 	
-	private int rne;
+	private String rne;
 	private String nombre;
 	private String apellido;
 	private String Sexo;
 	private String correo;
 	private String edad;
+	private String fechaNac;
+	private String telefono;
+	private int codigoNacionalidad;
 	
-	Alumnos(){
+	Alumno(){
 		}
-	public void setRne(int r){
+	
+	
+	public int getCodigoNacionalidad(){
+		return codigoNacionalidad;
+	}
+	public void setCodigoNacionalidad(int c){
+		codigoNacionalidad=c;
+	}
+	public void setRne(String r){
 		rne=r;
 	}
-	public int getRne(){
+	public String getRne(){
 		return rne;
 	}
 	public void setNombre(String n){
@@ -23,6 +34,25 @@ public class Alumnos {
 	public String getNombre(){
 		return nombre;
 	}
+	
+	
+	
+	public void setFechaNac(String n){
+		fechaNac=n;
+	}
+	public String getFechaNac(){
+		return fechaNac;
+	}
+	
+	
+	public void setTelefono(String t){
+		telefono=t;
+	}
+	public String getTelefono(){
+		return telefono;
+	}
+	
+	
 	public void setApellido(String ape){
 		apellido=ape;
 	}
