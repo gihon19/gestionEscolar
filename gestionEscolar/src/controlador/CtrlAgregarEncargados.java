@@ -4,7 +4,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
+
 import modelo.EncargadosPadres;
+import modelo.connBD.EncargadoDao;
 import view.ViewEncargadoResponsable;
 
 public class CtrlAgregarEncargados implements ActionListener {
@@ -31,6 +33,9 @@ public class CtrlAgregarEncargados implements ActionListener {
 		myEncargado.setTelefono(telefono);
 		String direccion=view.gettxtDireccion().getText();
 		myEncargado.setDireccion(direccion); 
+		
+		//EncargadoDao myDao= new EncargadoDao();
+		//myDao.registrarArticulo(myEncargado);
 	}
 	
 

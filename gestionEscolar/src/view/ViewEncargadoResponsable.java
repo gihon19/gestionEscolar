@@ -53,7 +53,7 @@ public class ViewEncargadoResponsable extends JFrame{
 	lblDireccion.setBounds(22, 240, 71, 20);
 	getContentPane().add(lblDireccion);
 	
-	JLabel lblCamposObligados = new JLabel("* Campos obligados");
+	JLabel lblCamposObligados = new JLabel(" Campos obligados * ");
 	lblCamposObligados.setBounds(22, 294, 119, 14);
 	getContentPane().add(lblCamposObligados);
 	
