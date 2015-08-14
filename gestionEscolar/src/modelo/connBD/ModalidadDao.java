@@ -17,12 +17,12 @@ import modelo.Modalidad;
 
 
 public class ModalidadDao {
-	private ConexionBD conexion=null;
+	private ConexionBD conexion=new ConexionBD();
 	private PreparedStatement insertarNuevo=null;
 	private PreparedStatement seleccionarTodas=null;
 	
-	public ModalidadDao(ConexionBD conn){
-		conexion=conn;
+	public ModalidadDao(){
+	
 	}
 	
 	/*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Metodo para seleccionar todos los articulos>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
