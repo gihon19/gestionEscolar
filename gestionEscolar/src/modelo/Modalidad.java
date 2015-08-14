@@ -1,18 +1,18 @@
 package modelo;
 
 public class Modalidad {
-  private int codigoModalidad;
+  private String codigoModalidad;
   private String nombre;
   
   
    public Modalidad(){
    }
    
-	public void setCodigoModalidad(int c){
+	public void setCodigoModalidad(String c){
 		codigoModalidad=c;
 	}
 	
-	public int getCodigoModalidad(){
+	public String getCodigoModalidad(){
 		return codigoModalidad;
 	}
 	

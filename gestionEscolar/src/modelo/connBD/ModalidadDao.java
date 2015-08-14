@@ -48,7 +48,7 @@ public class ModalidadDao {
 			while(res.next()){
 				Modalidad unaModalidad=new Modalidad();
 				existe=true;
-				unaModalidad.setCodigoModalidad(res.getInt("idMod"));
+				unaModalidad.setCodigoModalidad(res.getString("idMod"));
 				unaModalidad.setNombre(res.getString("nombre"));
 				
 				
@@ -98,9 +98,10 @@ public class ModalidadDao {
 		{
 			con = conexion.getPoolConexion().getConnection();
 			
-			insertarNuevo=con.prepareStatement( "INSERT INTO modalidad(nombre) VALUES (?)");
+			insertarNuevo=con.prepareStatement( "INSERT INTO modalidad(idMod,nombre) VALUES (?,?)");
 			
-			insertarNuevo.setString( 1, myModalidad.getNombre() );
+			insertarNuevo.setString( 1, myModalidad.getCodigoModalidad() );
+			insertarNuevo.setString( 2, myModalidad.getNombre() );
 			
 			
 			

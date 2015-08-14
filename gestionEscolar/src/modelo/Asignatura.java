@@ -1,7 +1,7 @@
 package modelo;
 
 public class Asignatura {
-	private int idAsignatura;
+	private String idAsignatura;
 	private String descripcion;
 	private int tipo;
 	
@@ -10,11 +10,11 @@ public class Asignatura {
 		
 	}
 	
-	public void setIdAsignatura(int ida){
+	public void setIdAsignatura(String ida){
 		idAsignatura=ida;
 	}
 	
-	public int getIdAsignatura(){
+	public String getIdAsignatura(){
 		return idAsignatura;
 	}
 	

@@ -29,9 +29,10 @@ public class AsignaturaDao {
 		{
 			con = conexion.getPoolConexion().getConnection();
 			
-			insertarNuevo=con.prepareStatement( "INSERT INTO clases(nombre) VALUES (?)");
+			insertarNuevo=con.prepareStatement( "INSERT INTO clases(idClase,nombre) VALUES (?,?)");
 			
-			insertarNuevo.setString( 1, myAsignatura.getDescripcion() );
+			insertarNuevo.setString( 1, myAsignatura.getIdAsignatura() );
+			insertarNuevo.setString( 2, myAsignatura.getDescripcion() );
 			
 			
 			
