@@ -12,7 +12,7 @@ public class Alumno {
 	private String telefono;
 	private int codigoNacionalidad;
 	
-	Alumno(){
+	public Alumno(){
 		}
 	
 	

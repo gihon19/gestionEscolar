@@ -9,7 +9,7 @@ public class EncargadosPadres {
 	private String direccion;
 	private String  telefono;
 	
-	EncargadosPadres(){
+	public EncargadosPadres(){
 		
 	}
 	

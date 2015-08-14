@@ -4,16 +4,91 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JOptionPane;
 
 import modelo.Alumno;
 import modelo.ConexionBD;
+import modelo.EncargadosPadres;
 
 public class AlumnoDao {
 	
 	ConexionBD conexion=new ConexionBD();
 	private PreparedStatement insertarNuevo=null;
 	private String idAlumnoRegistrado;
+	private PreparedStatement seleccionarTodas=null;
+	
+	
 	public AlumnoDao(){
+		
+	}
+	
+	/*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Metodo para seleccionar todos>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+	public List<Alumno> todos(){
+		
+		
+		
+        Connection con = null;
+        
+        
+      
+       	List<Alumno> alumnos=new ArrayList<Alumno>();
+		
+		ResultSet res=null;
+		
+		boolean existe=false;
+		try {
+			con = conexion.getPoolConexion().getConnection();
+			
+			seleccionarTodas = con.prepareStatement("SELECT * FROM alumno;");
+			
+			res = seleccionarTodas.executeQuery();
+			while(res.next()){
+				Alumno unAlumno=new Alumno();
+				
+				unAlumno.setRne(res.getString("rne"));
+				unAlumno.setNombre(res.getString("nombre"));
+				unAlumno.setApellido(res.getString("apellido"));
+				unAlumno.setCorreo(res.getString("correo"));
+				unAlumno.setTelefono(res.getString("telefono"));
+				unAlumno.setSexo(res.getString("sexo"));
+				unAlumno.setFechaNac("fechaNac");
+				//unAlumno.set
+								
+				
+				alumnos.add(unAlumno);
+				existe=true;
+
+			 }
+					
+			} catch (SQLException e) {
+					JOptionPane.showMessageDialog(null, "Error, no se conecto");
+					System.out.println(e);
+			}
+		finally
+		{
+			try{
+				
+				if(res != null) res.close();
+                if(seleccionarTodas != null)seleccionarTodas.close();
+                if(con != null) con.close();
+                
+				
+				} // fin de try
+				catch ( SQLException excepcionSql )
+				{
+					excepcionSql.printStackTrace();
+					//conexion.desconectar();
+				} // fin de catch
+		} // fin de finally
+		
+		
+			if (existe) {
+				return alumnos;
+			}
+			else return null;
 		
 	}
 	

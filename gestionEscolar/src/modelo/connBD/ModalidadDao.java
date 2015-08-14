@@ -26,7 +26,7 @@ public class ModalidadDao {
 	}
 	
 	/*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Metodo para seleccionar todos los articulos>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-	public List<Modalidad> todosModalidades(){
+	public List<Modalidad> todos(){
 		
 		
 		

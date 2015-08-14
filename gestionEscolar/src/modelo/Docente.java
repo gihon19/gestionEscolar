@@ -10,7 +10,7 @@ public class Docente {
 	private String pasword;
 	
 	
-	Docente(){
+	public Docente(){
 	}
 	
 	public void setRne(String RNP){

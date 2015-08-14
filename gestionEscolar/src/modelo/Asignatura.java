@@ -6,7 +6,7 @@ public class Asignatura {
 	private int tipo;
 	
 
-	Asignatura(){
+	public Asignatura(){
 		
 	}
 	
