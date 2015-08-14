@@ -23,8 +23,7 @@ public class CtrlAgregarEncargados implements ActionListener {
 	
 	
 	public void Guardar(){
-		String rnp= view.gettxtNoIdentidad().getText();
-		myEncargado.setRnp(rnp); 
+		
 		String nombre= view.gettxtNombre().getText();
 		myEncargado.setNombre(nombre); 
 		String apellido= view.gettxtApellido().getText();
@@ -33,12 +32,28 @@ public class CtrlAgregarEncargados implements ActionListener {
 		myEncargado.setTelefono(telefono);
 		String direccion=view.gettxtDireccion().getText();
 		myEncargado.setDireccion(direccion); 
+		String rnp= view.gettxtNoIdentidad().getText();
+		myEncargado.setRnp(rnp); 
 		
-		//EncargadoDao myDao= new EncargadoDao();
-		//myDao.registrarArticulo(myEncargado);
+		EncargadoDao myDao= new EncargadoDao();
+		boolean resultado= myDao.registrar(myEncargado);
+		
+		if (resultado==true){
+			JOptionPane.showMessageDialog(view, "Se Guardo Correctamente");
+			
+			view.gettxtNoIdentidad().setText("");
+			view.gettxtNombre().setText("");
+			view.gettxtApellido().setText("");
+			view.gettxtTelefono().setText(""); 
+			view.gettxtDireccion().setText(""); 
+		}
+		
+		else{
+				JOptionPane.showMessageDialog(null, "No se Guardo"); 
+		}
+		
 	}
 	
-
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		String comando= e.getActionCommand();
@@ -46,11 +61,15 @@ public class CtrlAgregarEncargados implements ActionListener {
 		switch(comando){
 		
 		case "GUARDAR": 
-			JOptionPane.showMessageDialog(null, "Se Guardo Correctamente");
+			
+			    Guardar();
+			    
 		break;
 		
 		case "CANCELAR":
-			JOptionPane.showMessageDialog(null, "Se Cancelo"); 
+			
+			 System.exit(0); 
+			 
 		break;
 		}
 	}
