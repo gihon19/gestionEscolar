@@ -16,6 +16,7 @@ public class ViewEncargadoResponsable extends JFrame{
 	private JTextField txtApellido;
 	private JTextField txtTelefono;
 	private JTextField txtDireccion;
+	private JLabel lblApellido;
 	private JButton btnCancelar;
 	private JButton btnGuardar;
 	
@@ -41,7 +42,7 @@ public class ViewEncargadoResponsable extends JFrame{
 	getContentPane().add(txtNombre);
 	txtNombre.setColumns(10);
 	
-	JLabel lblApellido = new JLabel("Apellido: *");
+	lblApellido = new JLabel("Apellido: *");
 	lblApellido.setBounds(22, 130, 71, 20);
 	getContentPane().add(lblApellido);
 	

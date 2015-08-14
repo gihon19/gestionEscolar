@@ -39,7 +39,7 @@ public class CtrlAgregarEncargados implements ActionListener {
 		boolean resultado= myDao.registrar(myEncargado);
 		
 		if (resultado==true){
-			JOptionPane.showMessageDialog(view, "Se Guardo Correctamente");
+			JOptionPane.showMessageDialog(view, "Se Guardo ");
 			
 			view.gettxtNoIdentidad().setText("");
 			view.gettxtNombre().setText("");
