@@ -33,7 +33,7 @@ public class AsignaturaDao {
         
         
       
-       	List<Asignatura> asignaturas=new ArrayList<Asignatura>();
+       	List<Asignatura> asignaturas1=new ArrayList<Asignatura>();
 		
 		ResultSet res=null;
 		
@@ -45,17 +45,17 @@ public class AsignaturaDao {
 			
 			res = seleccionarTodas.executeQuery();
 			while(res.next()){
-				Asignatura unaAsignatura=new Asignatura();
+				Asignatura unaAsignatura1=new Asignatura();
 				
-				unaAsignatura.setIdAsignatura(res.getString("idClase"));
-				unaAsignatura.setDescripcion(res.getString("nombre"));
+				unaAsignatura1.setIdAsignatura(res.getString("idClase"));
+				unaAsignatura1.setDescripcion(res.getString("nombre"));
 				
 				//unaModalidad.setCodigoModalidad(res.getString("idMod"));
 				//unaModalidad.setNombre(res.getString("nombre"));
 				
 				
 				
-				asignaturas.add(unaAsignatura);
+				asignaturas1.add(unaAsignatura1);
 				existe=true;
 			 }
 					
@@ -82,14 +82,14 @@ public class AsignaturaDao {
 		
 		
 			if (existe) {
-				return asignaturas;
+				return asignaturas1;
 			}
 			else return null;
 		
 	}
 	        
 	/*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Metodo para agregar>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-	public boolean registrar(Asignatura myAsignatura)
+	public boolean registrar(Asignatura myAsignatura1)
 	{
 		
 		int resultado=0;
@@ -102,8 +102,8 @@ public class AsignaturaDao {
 			
 			insertarNuevo=con.prepareStatement( "INSERT INTO clases(idClase,nombre) VALUES (?,?)");
 			
-			insertarNuevo.setString( 1, myAsignatura.getIdAsignatura() );
-			insertarNuevo.setString( 2, myAsignatura.getDescripcion() );
+			insertarNuevo.setString( 1, myAsignatura1.getIdAsignatura() );
+			insertarNuevo.setString( 2, myAsignatura1.getDescripcion() );
 			
 			
 			
