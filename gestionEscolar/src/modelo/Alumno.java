@@ -12,15 +12,15 @@ public class Alumno {
 	private String telefono;
 	private int codigoNacionalidad;
 	
-	Alumno(){
+	public Alumno(){
 		}
 	
 	
 	public int getCodigoNacionalidad(){
 		return codigoNacionalidad;
 	}
-	public void setCodigoNacionalidad(int c){
-		codigoNacionalidad=c;
+	public void setCodigoNacionalidad(int nacionalidad){
+		codigoNacionalidad=nacionalidad;
 	}
 	public void setRne(String r){
 		rne=r;

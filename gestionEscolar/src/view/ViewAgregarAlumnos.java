@@ -145,10 +145,6 @@ public class ViewAgregarAlumnos extends JFrame  {
 		getContentPane().add(txtNacionalidad);
 		txtNacionalidad.setColumns(10);
 		
-		JTextArea textArea = new JTextArea();
-		textArea.setBounds(171, 275, 4, 22);
-		getContentPane().add(textArea);
-		
 	   btnGuardar = new BotonGuardar();
 		btnGuardar.setBounds(34, 553, 122, 33);
 		getContentPane().add(btnGuardar);
