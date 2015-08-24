@@ -22,7 +22,7 @@ public class EncargadoDao {
 	
 	public EncargadoDao(){
 		
-	}
+	}      
 	/*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Metodo para seleccionar todos>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 	public List<EncargadosPadres> todos(){
 		

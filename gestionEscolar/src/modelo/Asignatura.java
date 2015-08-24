@@ -3,7 +3,7 @@ package modelo;
 public class Asignatura {
 	private String idAsignatura;
 	private String descripcion;
-	private int tipo;
+	private int tipo;      
 	
 
 	public Asignatura(){

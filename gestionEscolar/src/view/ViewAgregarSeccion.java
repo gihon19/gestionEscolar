@@ -14,7 +14,7 @@ public class ViewAgregarSeccion extends JFrame{
 	private int Seccion;
 	private String jornada;
 	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField textField_1;  
 	private JTextField textField_2;
 	private JTextField textField_3;
 	private JButton btnGuardar;

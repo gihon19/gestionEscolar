@@ -20,7 +20,7 @@ public class AlumnoDao {
 	private String idAlumnoRegistrado;
 	private PreparedStatement seleccionarTodas=null;
 	
-	
+	       
 	public AlumnoDao(){
 		
 	}

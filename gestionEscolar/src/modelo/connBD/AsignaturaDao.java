@@ -87,7 +87,7 @@ public class AsignaturaDao {
 			else return null;
 		
 	}
-	
+	        
 	/*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Metodo para agregar>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 	public boolean registrar(Asignatura myAsignatura)
 	{
