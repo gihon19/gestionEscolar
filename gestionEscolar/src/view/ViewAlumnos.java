@@ -19,7 +19,7 @@ public class ViewAlumnos extends JFrame {
 		
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(28, 29, 440, 256);
+		scrollPane.setBounds(34, 44, 464, 270);
 		getContentPane().add(scrollPane);
 		
 		mymodelo=new MtAlumno();

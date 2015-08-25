@@ -8,7 +8,7 @@ import javax.swing.table.AbstractTableModel;
 import view.ViewAlumnos;
 
 public class MtAlumno extends AbstractTableModel {
-	private String []TitulosTabla={"RNE","NombreS","Apellido","Edad","Seccion","Correo"};
+	private String []TitulosTabla={"RNE","Nombre","Apellido","Edad","Seccion","Correo"};
 	private List<ViewAlumnos> Alumnos = new ArrayList<ViewAlumnos>();
 	
 	@Override
