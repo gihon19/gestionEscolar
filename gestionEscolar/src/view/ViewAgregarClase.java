@@ -57,7 +57,7 @@ public class ViewAgregarClase extends JDialog {
 			
 			//agregar texto
 			JLabel lblNombre = new JLabel("Descripcion");
-			lblNombre.setBounds(20, 104, 54, 20);
+			lblNombre.setBounds(20, 104, 74, 20);
 			getContentPane().add(lblNombre);
 			
 			//Agregar Boton
