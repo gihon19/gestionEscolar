@@ -34,7 +34,7 @@ public class ModalidadDao {
         
         
       
-       	List<Modalidad> modalidades=new ArrayList<Modalidad>();
+       	List<Modalidad> modalidades1=new ArrayList<Modalidad>();
 		
 		ResultSet res=null;
 		
@@ -53,7 +53,7 @@ public class ModalidadDao {
 				
 				
 				
-				modalidades.add(unaModalidad);
+				modalidades1.add(unaModalidad);
 			 }
 					
 			} catch (SQLException e) {
@@ -79,7 +79,7 @@ public class ModalidadDao {
 		
 		
 			if (existe) {
-				return modalidades;
+				return modalidades1;
 			}
 			else return null;
 		
