@@ -26,10 +26,10 @@ public class ViewAgregarClase extends JDialog {
 		private JButton btnCancelar;
 		
 		//Constructor
-		public ViewAgregarClase(Window v) {
+		public ViewAgregarClase() {
 			
 			//espara agregar un tema Arriba, en la ventana.
-			super(v,"Agregar Modalidad",Dialog.ModalityType.DOCUMENT_MODAL);
+			setTitle("Agregar Asignatura");
 			//Metodos.
 			
 			getContentPane().setLayout (null);
