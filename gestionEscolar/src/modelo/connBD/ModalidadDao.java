@@ -13,20 +13,20 @@ import modelo.Alumno;
 import modelo.ConexionBD;
 import modelo.Modalidad;
 
-
+       
 
 
 public class ModalidadDao {
-	private ConexionBD conexion=null;
+	private ConexionBD conexion=new ConexionBD();
 	private PreparedStatement insertarNuevo=null;
 	private PreparedStatement seleccionarTodas=null;
 	
-	public ModalidadDao(ConexionBD conn){
-		conexion=conn;
+	public ModalidadDao(){
+	
 	}
 	
 	/*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Metodo para seleccionar todos los articulos>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-	public List<Modalidad> todosModalidades(){
+	public List<Modalidad> todos(){
 		
 		
 		
@@ -34,7 +34,7 @@ public class ModalidadDao {
         
         
       
-       	List<Modalidad> modalidades=new ArrayList<Modalidad>();
+       	List<Modalidad> modalidades1=new ArrayList<Modalidad>();
 		
 		ResultSet res=null;
 		
@@ -48,12 +48,12 @@ public class ModalidadDao {
 			while(res.next()){
 				Modalidad unaModalidad=new Modalidad();
 				existe=true;
-				unaModalidad.setCodigoModalidad(res.getInt("idMod"));
+				unaModalidad.setCodigoModalidad(res.getString("idMod"));
 				unaModalidad.setNombre(res.getString("nombre"));
 				
 				
 				
-				modalidades.add(unaModalidad);
+				modalidades1.add(unaModalidad);
 			 }
 					
 			} catch (SQLException e) {
@@ -79,7 +79,7 @@ public class ModalidadDao {
 		
 		
 			if (existe) {
-				return modalidades;
+				return modalidades1;
 			}
 			else return null;
 		
@@ -98,9 +98,10 @@ public class ModalidadDao {
 		{
 			con = conexion.getPoolConexion().getConnection();
 			
-			insertarNuevo=con.prepareStatement( "INSERT INTO modalidad(nombre) VALUES (?)");
+			insertarNuevo=con.prepareStatement( "INSERT INTO modalidad(idMod,nombre) VALUES (?,?)");
 			
-			insertarNuevo.setString( 1, myModalidad.getNombre() );
+			insertarNuevo.setString( 1, myModalidad.getCodigoModalidad() );
+			insertarNuevo.setString( 2, myModalidad.getNombre() );
 			
 			
 			

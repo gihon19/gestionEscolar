@@ -1,29 +1,29 @@
 package modelo;
 
 public class Asignatura {
-	private int idAsignatura;
-	private String descripcion;
-	private int tipo;
+	private String idAsignatura1;
+	private String descripcion1;
+	private int tipo;      
 	
 
-	Asignatura(){
+	public Asignatura(){
 		
 	}
 	
-	public void setIdAsignatura(int ida){
-		idAsignatura=ida;
+	public void setIdAsignatura(String ida){
+		idAsignatura1=ida;
 	}
 	
-	public int getIdAsignatura(){
-		return idAsignatura;
+	public String getIdAsignatura(){
+		return idAsignatura1;
 	}
 	
 	public void setDescripcion(String des){
-		descripcion=des;
+		descripcion1=des;
 	}
 	
 	public String getDescripcion(){
-		return descripcion;
+		return descripcion1;
 	}
 	
 	public void setTipo(int ti){
@@ -35,7 +35,7 @@ public class Asignatura {
 	}
 	
 	public String toString(){
-		return  "idAsignatura:"+idAsignatura+", Descripcion:"+descripcion+" ,Tipo: "+tipo;
+		return  "idAsignatura:"+idAsignatura1+", Descripcion:"+descripcion1+" ,Tipo: "+tipo;
 		}
 
 }
