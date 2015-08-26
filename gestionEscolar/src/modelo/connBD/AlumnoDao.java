@@ -54,7 +54,7 @@ public class AlumnoDao {
 				unAlumno.setCorreo(res.getString("correo"));
 				unAlumno.setTelefono(res.getString("telefono"));
 				unAlumno.setSexo(res.getString("sexo"));
-				unAlumno.setFechaNac("fechaNac");
+				unAlumno.setFechaNac(res.getString("fechaNac"));
 				//unAlumno.set
 								
 				

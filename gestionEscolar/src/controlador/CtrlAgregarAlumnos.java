@@ -35,6 +35,7 @@ public class CtrlAgregarAlumnos implements ActionListener {
   myalumno.setFechaNac(Fecha);
   String Telefono= view.gettxtTelefono().getText();
   myalumno.setTelefono(Telefono);
+  
   String Correo= view.gettxtCorreo().getText();
   myalumno.setCorreo(Correo);
   String Nacionalidad= view.gettxtNacionalidad().getText();
