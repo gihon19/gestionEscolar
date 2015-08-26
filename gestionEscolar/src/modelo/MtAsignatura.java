@@ -10,7 +10,7 @@ import view.ViewAsignatura;
 public class MtAsignatura extends AbstractTableModel {
 	
 	private static final String[] TitulosTabla={"Codigo Asignatura","Descripcion"};
-	private List<ViewAsignatura> asignatura = new ArrayList<ViewAsignatura>();
+	private List<Asignatura> asignatura = new ArrayList<Asignatura>();
 
 	
 	  @Override
@@ -26,17 +26,40 @@ public class MtAsignatura extends AbstractTableModel {
 	@Override
 	public int getRowCount() {
 		// TODO Auto-generated method stub
-		return 0;
+		return asignatura.size();
 	}
 
 	@Override
 	public Object getValueAt(int fila, int columna) {
 		// TODO Auto-generated method stub
+		
+		switch(columna){
+		case 0:
+			return asignatura.get(fila).getIdAsignatura();
+		case 1:
+			return asignatura.get(fila).getDescripcion();
+		default:
+			return null;
+		}
  
-		return null;
+		
 	}
 	
+	public void limpiar(){
+		asignatura.clear();
+		fireTableDataChanged();
+		
+	}
 	
+	public void Agregar (Asignatura a)
+	{
+		asignatura.add(a);
+		fireTableDataChanged();
+		
+	}
 }
+	
+	
+
 	
 
