@@ -56,4 +56,6 @@ public class EncargadosPadres {
 	public String toString(){
 		return  "RNP:"+rnp+", Nombre:"+nombre+" , Apellido:"+apellido+" ,Direccion:"+direccion+" ,Telefono: "+telefono;
 		}
-}
+
+	}
+

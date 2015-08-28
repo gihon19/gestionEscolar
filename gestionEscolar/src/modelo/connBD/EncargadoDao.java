@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +19,8 @@ public class EncargadoDao {
 	ConexionBD conexion=new ConexionBD();
 	private PreparedStatement insertarNuevo=null;
 	private PreparedStatement seleccionarTodas=null;
-	
+	private PreparedStatement eliminarPersona=null;
+	private PreparedStatement buscarDato=null;
 	
 	public EncargadoDao(){
 		
@@ -133,5 +135,76 @@ public class EncargadoDao {
 			} // fin de catch
 		} // fin de finally
 	}
+	
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Metodo para eliminar<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/	
+	public boolean eliminarEncargados(EncargadosPadres encargado){
+		
+		
+		int resultado=0;
+		ResultSet rs=null;
+		Connection con = null;
+		
+	    	 try 
+	 		{
+	 			con = conexion.getPoolConexion().getConnection();
+	 			
+	 			eliminarPersona=con.prepareStatement("Delete FROM responsable Where Rnp="+encargado.getRnp());
+	 			
+	 			
+	 			
+	 			resultado=eliminarPersona.executeUpdate();
+	 			
+	    	 
+			return true;
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			
+			e.printStackTrace();
+			return false;
+		}
+		
+	}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>metodo de Buscar<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+	public List <EncargadosPadres> buscarEncargados(String rnp){
+		
+		Connection con = null;
+		
+		List <EncargadosPadres> encargado=new ArrayList<EncargadosPadres>();
+		
+        ResultSet res=null;
+		boolean existe=false;
+		
+		 try{
+			 
+			 con = conexion.getPoolConexion().getConnection();
+			 
+			 buscarDato = con.prepareStatement("Select *FROM responsable Where Rnp="+rnp);
+				
+			 res = buscarDato.executeQuery();
+				while(res.next()){
+					
+					EncargadosPadres unEncargado=new EncargadosPadres();
+					unEncargado.setRnp(res.getString("rnp"));
+					unEncargado.setNombre(res.getString("nombre"));
+					unEncargado.setApellido(res.getString("apellido"));
+					unEncargado.setTelefono(res.getString("telefono"));
+					unEncargado.setDireccion(res.getString("direccion"));
+					
+					encargado.add(unEncargado);
+					existe=true;
+				}
+				
+				 }
+				catch(SQLException e1){
+					e1.printStackTrace();
+					
+				}  
+		     return encargado;
+		     
+				}
+			 
+	
 
 }

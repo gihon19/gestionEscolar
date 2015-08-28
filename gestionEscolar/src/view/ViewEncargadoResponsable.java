@@ -21,7 +21,8 @@ public class ViewEncargadoResponsable extends JFrame{
 	private JButton btnGuardar;
 	
 	
-	ViewEncargadoResponsable(){
+	public ViewEncargadoResponsable(){
+		setTitle("Agregar Encargados");
 	getContentPane().setLayout(null);
 	
 	JLabel lblNoIdentidad = new JLabel("No Identidad: *");
