@@ -60,6 +60,11 @@ public class CtrAgregarAsignatura implements ActionListener{
 			 System.exit(0); 
 			 
 		break;
+		
+		case "BUSCAR":
+			
+			break;
+		
 		}
 		
 	}
