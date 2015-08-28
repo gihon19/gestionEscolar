@@ -26,6 +26,7 @@ public class CtrlAgregarModalidad implements ActionListener {
 		String Modalidad= view.getTxtIdModalidad().getText();
 		myModalidad.setCodigoModalidad(Modalidad);
 		String Nombre= view.getTxtNombre().getText();
+		
 		myModalidad.setNombre(Nombre);
 		
 		ModalidadDao myDao=new ModalidadDao();
