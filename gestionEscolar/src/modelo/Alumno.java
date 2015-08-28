@@ -19,8 +19,8 @@ public class Alumno {
 	public int getCodigoNacionalidad(){
 		return codigoNacionalidad;
 	}
-	public void setCodigoNacionalidad(int c){
-		codigoNacionalidad=c;
+	public void setCodigoNacionalidad(int nacionalidad){
+		codigoNacionalidad=nacionalidad;
 	}
 	public void setRne(String r){
 		rne=r;

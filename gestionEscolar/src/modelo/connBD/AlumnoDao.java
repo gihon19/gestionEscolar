@@ -54,7 +54,7 @@ public class AlumnoDao {
 				unAlumno.setCorreo(res.getString("correo"));
 				unAlumno.setTelefono(res.getString("telefono"));
 				unAlumno.setSexo(res.getString("sexo"));
-				unAlumno.setFechaNac("fechaNac");
+				unAlumno.setFechaNac(res.getString("fechaNac"));
 				//unAlumno.set
 								
 				
@@ -104,7 +104,7 @@ public class AlumnoDao {
 		{
 			con = conexion.getPoolConexion().getConnection();
 			
-			insertarNuevo=con.prepareStatement( "INSERT INTO alumno(rne,nombre,apellido,fechaNac,sexo,telefono,correo,nacionalidad) VALUES (?,?,?,?,?,?,?,?)");
+			insertarNuevo=con.prepareStatement( "INSERT INTO alumno(rne,nombre,apellido,fechaNac,sexo,telefono,correo,nacionalidad,passwd) VALUES (?,?,?,?,?,?,?,?,?)");
 			
 			insertarNuevo.setString( 1, myAlumno.getRne() );
 			insertarNuevo.setString( 2, myAlumno.getNombre() );
@@ -114,6 +114,7 @@ public class AlumnoDao {
 			insertarNuevo.setString( 6, myAlumno.getTelefono());
 			insertarNuevo.setString( 7, myAlumno.getCorreo());
 			insertarNuevo.setInt( 8, myAlumno.getCodigoNacionalidad());
+			insertarNuevo.setString( 9, myAlumno.getRne());
 			
 			
 			resultado=insertarNuevo.executeUpdate();
