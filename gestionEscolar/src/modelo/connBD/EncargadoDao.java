@@ -180,7 +180,7 @@ public class EncargadoDao {
 			 
 			 con = conexion.getPoolConexion().getConnection();
 			 
-			 buscarDato = con.prepareStatement("Select *FROM responsable Where Rnp="+rnp);
+			 buscarDato = con.prepareStatement("Select * FROM responsable Where Rnp="+rnp);
 				
 			 res = buscarDato.executeQuery();
 				while(res.next()){
@@ -194,16 +194,36 @@ public class EncargadoDao {
 					
 					encargado.add(unEncargado);
 					existe=true;
-				}
-				
 				 }
-				catch(SQLException e1){
-					e1.printStackTrace();
-					
-				}  
-		     return encargado;
-		     
-				}
+				
+			} catch (SQLException e) {
+					JOptionPane.showMessageDialog(null, "Error, no se conecto");
+					System.out.println(e);
+			}
+		finally
+		{
+			try{
+				
+				if(res != null) res.close();
+             if(buscarDato != null)buscarDato.close();
+             if(con != null) con.close();
+             
+				
+				} // fin de try
+				catch ( SQLException excepcionSql )
+				{
+					excepcionSql.printStackTrace();
+					//conexion.desconectar();
+				} // fin de catch
+		} // fin de finally
+		
+		
+			if (existe) {
+				return encargado;
+			}
+			else return null;
+		
+	}
 			 
 	
 
