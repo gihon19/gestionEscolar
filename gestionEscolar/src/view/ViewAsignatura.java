@@ -5,6 +5,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 import modelo.MtAsignatura;
+import modelo.MtEncargado;
 
 import javax.swing.JButton;
 
@@ -30,10 +31,16 @@ public class ViewAsignatura extends JFrame {
 	private JButton btnEliminar;
 	private JTextField textField;
 	private JButton btnBuscar;
+	private JTable mytabla;
+	private MtAsignatura myModelo;
 	
 	public ViewAsignatura(){
 		
 		getContentPane().setLayout(null);
+		
+		myModelo=new MtAsignatura();
+		mytabla=new JTable();
+		mytabla.setModel(myModelo);
 			
 		 scrollPane = new JScrollPane();
 		scrollPane.setBounds(24, 72, 641, 308);
@@ -71,13 +78,25 @@ public class ViewAsignatura extends JFrame {
 		public MtAsignatura getModelo(){
 		
 			return modelo;
-			
 		}
+		
+		public JTable getMyTabla(){
+			return mytabla;
+		}
+		
+		public MtAsignatura getMyModelo(){
+			return myModelo;
+		}
+		
 	public void conectarControlador(CtrlAsignatura c){
+		mytabla.addMouseListener(c);
+		
 		btnBuscar.addActionListener(c);	
 		btnBuscar.setActionCommand("BUSCAR");
+		
 		btnEliminar.addActionListener(c);
 		btnEliminar.setActionCommand("ELIMINAR");
+		
 		btnAgregar.addActionListener(c);
 		btnAgregar.setActionCommand("AGREGAR");
 		

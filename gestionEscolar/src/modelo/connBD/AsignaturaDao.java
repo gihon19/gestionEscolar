@@ -11,12 +11,14 @@ import javax.swing.JOptionPane;
 
 import modelo.Asignatura;
 import modelo.ConexionBD;
+import modelo.EncargadosPadres;
 import modelo.Modalidad;
 
 public class AsignaturaDao {
 	ConexionBD conexion=new ConexionBD();
 	private PreparedStatement insertarNuevo=null;
 	private PreparedStatement seleccionarTodas=null;
+	private PreparedStatement eliminarAsignatura=null;
 
 	public AsignaturaDao() {
 		// TODO Auto-generated constructor stub
@@ -132,5 +134,44 @@ public class AsignaturaDao {
 			} // fin de catch
 		} // fin de finally
 	}
+	
+	
+	
+	
+	
+   public boolean eliminarAsignatura(Asignatura asignatura){
+		
+		
+		int resultado=0;
+		ResultSet rs=null;
+		Connection con = null;
+		
+	    	 try 
+	 		{
+	 			con = conexion.getPoolConexion().getConnection();
+	 			
+	 			eliminarAsignatura=con.prepareStatement("Delete FROM clases Where ida="+asignatura.getIdAsignatura());
+	 			
+	 			
+	 			
+	 			resultado=eliminarAsignatura.executeUpdate();
+	 			
+	    	 
+			return true;
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			
+			e.printStackTrace();
+			return false;
+		}
+		
+	}
+	
+	
+	
+	
+	
+	
 
 }

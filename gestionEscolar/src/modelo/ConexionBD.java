@@ -19,7 +19,7 @@ public class ConexionBD {
 	   static String bd = "colegio_hdm";
 	   static String login = "root";
 	   static String password = "jdmm123";
-	   static String url = "jdbc:mysql://192.168.0.100:3306/"+bd;
+	   static String url = "jdbc:mysql://192.168.1.36:3306/"+bd;
 	   static String driver="com.mysql.jdbc.Driver";
 	   private Usuario usuarioLogin=null;
 

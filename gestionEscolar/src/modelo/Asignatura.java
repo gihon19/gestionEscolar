@@ -38,4 +38,15 @@ public class Asignatura {
 		return  "idAsignatura:"+idAsignatura1+", Descripcion:"+descripcion1+" ,Tipo: "+tipo;
 		}
 
+	public static void remove(int fila) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public static Asignatura get(int fila) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 }

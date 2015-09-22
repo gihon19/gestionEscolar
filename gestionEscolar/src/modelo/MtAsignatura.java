@@ -57,8 +57,21 @@ public class MtAsignatura extends AbstractTableModel {
 		fireTableDataChanged();
 		
 	}
-}
 	
+	public void EliminarAsignatura(int fila){
+		
+		Asignatura.remove(fila);
+		
+		this.fireTableDataChanged();
+		
+	}
+
+	public Asignatura getAsignatura(int fila){
+		
+		return Asignatura.get(fila);
+
+	}
+}
 	
 
 	

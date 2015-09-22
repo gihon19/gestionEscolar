@@ -4,6 +4,7 @@ import controlador.CtrlAgregarModalidad;
 
 public class Prueba {
 	
+	
 	public static void main(String[] args){
 		
 		ViewAgregarModalidad menu=new ViewAgregarModalidad();
@@ -11,7 +12,7 @@ public class Prueba {
 		menu.setVisible(true);
 		menu.setSize(430,300);
 	   menu.conectarCtrl(menu1);
-	   menu.conectarCtrl(menu1);
+	   
 	   
 	}
 }
