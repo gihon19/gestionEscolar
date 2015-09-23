@@ -5,7 +5,9 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
+import modelo.Asignatura;
 import modelo.Usuario;
+import modelo.connBD.AsignaturaDao;
 import modelo.connBD.UsuarioDao;
 import view.ViewAgregarClase;
 
