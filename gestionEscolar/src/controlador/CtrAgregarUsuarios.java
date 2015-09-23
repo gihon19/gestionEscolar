@@ -6,18 +6,17 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
 import modelo.Asignatura;
+import modelo.Usuario;
 import modelo.connBD.AsignaturaDao;
+import modelo.connBD.UsuarioDao;
 import view.ViewAgregarClase;
 
-public class CtrAgregarAsignatura implements ActionListener{
+public class CtrAgregarUsuarios  {
 	
 	private ViewAgregarClase view;
 	private Asignatura myAsignatura;
 	private AsignaturaDao myDao;
 	
-	/**
-	 * @wbp.parser.entryPoint
-	 */
 	public CtrAgregarAsignatura(ViewAgregarClase v)
 	{
 		view=v;
@@ -66,5 +65,9 @@ public class CtrAgregarAsignatura implements ActionListener{
 		}
 		
 	}
+
+
+
+	
 
 }

@@ -21,20 +21,45 @@ public class MtModalidad extends AbstractTableModel {
 	@Override
 	public int getColumnCount() {
 		// TODO Auto-generated method stub
-		return 2;
+		return columnNames.length;
 	}
 
 	@Override
 	public int getRowCount() {
 		// TODO Auto-generated method stub
-		return 0;
+		return modalidades.size();
 	}
 
 	@Override
-	public Object getValueAt(int rowIndex, int columnIndex) {
-		// TODO Auto-generated method stub
-		return null;
+	public Object getValueAt(int filas, int columna) {
+		switch(filas){
+		case 0:
+			return null; 
+		case 1:
+			return  null;
+		default :
+			return null;
+		}
+
 	}
+
+
+	public void limpiarTabla() {
+		
+		modalidades.clear();
+		
+		fireTableDataChanged();
+	}
+
+
+	public void AgregarModalidad(Modalidad a) {
+		modalidades.add(a);
+		
+		fireTableDataChanged();
+		
+	}
+
+
 
 	
 }
