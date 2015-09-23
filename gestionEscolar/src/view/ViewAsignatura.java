@@ -2,6 +2,7 @@ package view;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
 import modelo.MtAsignatura;
@@ -31,18 +32,20 @@ public class ViewAsignatura extends JFrame {
 	private JButton btnEliminar;
 	private JTextField textField;
 	private JButton btnBuscar;
-	private JTable mytabla;
-	private MtAsignatura myModelo;
+	//private JTable mytabla;
+	//private MtAsignatura myModelo;
 	
 	public ViewAsignatura(){
 		
 		getContentPane().setLayout(null);
 		
-		myModelo=new MtAsignatura();
+		setTitle("Lista De Asignatura");
+		
+		/*myModelo=new MtAsignatura();
 		mytabla=new JTable();
-		mytabla.setModel(myModelo);
+		mytabla.setModel(myModelo);*/
 			
-		 scrollPane = new JScrollPane();
+		scrollPane = new JScrollPane();
 		scrollPane.setBounds(24, 72, 641, 308);
 		getContentPane().add(scrollPane);
 		
@@ -76,23 +79,26 @@ public class ViewAsignatura extends JFrame {
 		
 	}
 		public MtAsignatura getModelo(){
-		
 			return modelo;
 		}
 		
 		public JTable getMyTabla(){
-			return mytabla;
+			return table;
 		}
 		
-		public MtAsignatura getMyModelo(){
-			return myModelo;
-		}
+		
 		
 	public void conectarControlador(CtrlAsignatura c){
-		mytabla.addMouseListener(c);
 		
+		table.addMouseListener(c);
+		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		
+		//this.modelo
 		btnBuscar.addActionListener(c);	
-		btnBuscar.setActionCommand("BUSCAR");
+		textField.setActionCommand("BUSCAR");
+		
+		textField.addMouseListener(c);
+		//btnBuscar.addMouseListener(c);
 		
 		btnEliminar.addActionListener(c);
 		btnEliminar.setActionCommand("ELIMINAR");

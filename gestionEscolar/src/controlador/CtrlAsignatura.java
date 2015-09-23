@@ -6,20 +6,20 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 import view.ViewAgregarClase;
-import view.ViewAgregarModalidad;
 import view.ViewAsignatura;
 import modelo.Asignatura;
-import modelo.EncargadosPadres;
 import modelo.connBD.AsignaturaDao;
 
-public class CtrlAsignatura implements MouseListener,ActionListener{
+public class CtrlAsignatura implements ActionListener, MouseListener{
 	
 	private ViewAsignatura view;
 	private Asignatura myAsignatura;
 	private AsignaturaDao myDao;
 	private int filaSeleccionada;
-	private Asignatura asignaturaSelecionado;
+	//private Asignatura asignaturaSelecionado;
 	
 	
 	public CtrlAsignatura(ViewAsignatura v){
@@ -27,6 +27,10 @@ public class CtrlAsignatura implements MouseListener,ActionListener{
 		myAsignatura= new Asignatura();
 		myDao = new AsignaturaDao();
 		cargarTabla(myDao.todos());
+		view.conectarControlador(this);
+		
+		view.setSize(700,450);
+		view.setVisible(true);
 	}
 
 	public void cargarTabla(List<Asignatura> asignatura)
@@ -39,6 +43,19 @@ public class CtrlAsignatura implements MouseListener,ActionListener{
 			}
 		}
 	}
+	
+	
+		// TODO Auto-generated method stub
+		
+	/*	filaSeleccionada=view.getMyTabla().getSelectedRow();
+		
+		asignaturaSelecionado=view.getMyModelo().getAsignatura(filaSeleccionada);
+		
+		JOptionPane.showMessageDialog(view, asignaturaSelecionado);*/
+	
+
+	
+
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -59,11 +76,12 @@ public class CtrlAsignatura implements MouseListener,ActionListener{
 		
 		case"ELIMINAR":
 			
-			boolean result=myDao.eliminarAsignatura(asignaturaSelecionado);
+			boolean result=myDao.eliminarAsignatura(myAsignatura);
 			
 			if (result==true){
 				
-				view.getMyModelo().EliminarAsignatura(filaSeleccionada); 		
+				view.getModelo().EliminarAsignatura(filaSeleccionada); 		
+			
 			}
 			
 		
@@ -82,11 +100,11 @@ public class CtrlAsignatura implements MouseListener,ActionListener{
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		
 		filaSeleccionada=view.getMyTabla().getSelectedRow();
 		
-		asignaturaSelecionado=view.getMyModelo().getAsignatura(filaSeleccionada);
+		myAsignatura=view.getModelo().getAsignatura(filaSeleccionada);
 		
+		//JOptionPane.showMessageDialog(view, "fila: "+filaSeleccionada+myAsignatura);
 	}
 
 	@Override
@@ -110,6 +128,7 @@ public class CtrlAsignatura implements MouseListener,ActionListener{
 	@Override
 	public void mouseReleased(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-	
+		
 	}
 }
+

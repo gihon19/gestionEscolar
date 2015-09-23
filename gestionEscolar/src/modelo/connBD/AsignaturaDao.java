@@ -150,7 +150,9 @@ public class AsignaturaDao {
 	 		{
 	 			con = conexion.getPoolConexion().getConnection();
 	 			
-	 			eliminarAsignatura=con.prepareStatement("Delete FROM clases Where ida="+asignatura.getIdAsignatura());
+	 			eliminarAsignatura=con.prepareStatement("Delete FROM clases Where idClase=?");
+	 			eliminarAsignatura.setString(1, asignatura.getIdAsignatura());
+	 
 	 			
 	 			
 	 			
@@ -165,6 +167,20 @@ public class AsignaturaDao {
 			e.printStackTrace();
 			return false;
 		}
+	    	 
+	    	 finally
+	 		{
+	 			try{
+	 				if(rs!=null)rs.close();
+	 				 if(eliminarAsignatura != null)eliminarAsignatura.close();
+	 	              if(con != null) con.close();
+	 			} // fin de try
+	 			catch ( SQLException excepcionSql )
+	 			{
+	 				excepcionSql.printStackTrace();
+	 				//conexion.desconectar();
+	 			} // fin de catch
+	 		} // fin de finally
 		
 	}
 	
