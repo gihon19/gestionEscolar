@@ -21,7 +21,7 @@ public class ConexionBD {
 	   static String password = "jdmm123";
 	   static String url = "jdbc:mysql://192.168.1.36:3306/"+bd;
 	   static String driver="com.mysql.jdbc.Driver";
-	   private Usuario usuarioLogin=null;
+	   private Usuarios usuarioLogin=null;
 
 	   Connection conn = null;
 	   
@@ -32,10 +32,10 @@ public class ConexionBD {
 		   poolConexiones=ConexionBD.setDataSource("mysql");
 	   }
 	   
-	   public Usuario getUsuarioLogin(){
+	   public Usuarios getUsuarioLogin(){
 		   return usuarioLogin;
 	   }
-	   public void setUsuarioLogin(Usuario u){
+	   public void setUsuarioLogin(Usuarios u){
 		   usuarioLogin=u;
 		   
 	   }
