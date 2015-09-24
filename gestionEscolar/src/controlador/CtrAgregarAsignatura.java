@@ -15,6 +15,9 @@ public class CtrAgregarAsignatura implements ActionListener{
 	private Asignatura myAsignatura;
 	private AsignaturaDao myDao;
 	
+	/**
+	 * @wbp.parser.entryPoint
+	 */
 	public CtrAgregarAsignatura(ViewAgregarClase v)
 	{
 		view=v;
