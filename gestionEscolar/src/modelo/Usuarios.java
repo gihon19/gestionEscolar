@@ -38,4 +38,20 @@ public class Usuarios {
 	public void setemail(String e){
 		email=e;
 	}
+	public String getuser(){
+		return user;
+	}
+	public void setuser(String u){
+		user=u;
+	}
+	public String getpassword(){
+		return password;
+	}
+	public void setpassword(String p){
+		password=p;
+	}
+	
+	public String toString(){
+		return "nombre: "+nombre+", apellido: "+apellido+", telefono:  "+telefono+", apellido: "+apellido+", email: "+email;
+	}	
 }
